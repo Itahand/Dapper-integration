@@ -1,12 +1,16 @@
 /** @format */
 
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+import {
+  getOwnedIDs,
+  logIn,
+  getMetadata,
+  getMetadataViews,
+} from "./Flow/actions";
 
+function App() {
   return (
     <div className='App'>
       <div>
@@ -31,9 +35,19 @@ function App() {
       </div>
       <h1>Dapper Wallet</h1>
       <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => getOwnedIDs("0xdf2b79b727d6e0bf")}>
+          Fetch Owned momments' IDs
         </button>
+        <button onClick={() => getMetadata("0xdf2b79b727d6e0bf", "33199717")}>
+          Fetch a momment's data
+        </button>
+        <button
+          onClick={() => getMetadataViews("0xdf2b79b727d6e0bf", "33199717")}>
+          Fetch a momment's metadataViews
+        </button>
+      </div>
+      <div className='card'>
+        <button onClick={() => logIn()}>Connect Wallet</button>
       </div>
     </div>
   );
