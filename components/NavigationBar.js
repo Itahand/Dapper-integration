@@ -121,7 +121,7 @@ export default function NavigationBar() {
 
         <Link href='/'>
           <label className='cursor-pointer font-flow font-bold text-2xl sm:text-3xl'>
-            flowviewZZZZZ
+            Crypto Card Shop
           </label>
         </Link>
         <label className='hidden sm:block px-1 text-center font-flow text-drizzle font-medium text-xs border border-1 border-drizzle'>
